@@ -4,5 +4,6 @@ Output data is given in json and csv format.
 
 # Setup
 - Install necessary python packages (look at import statements)
+- Change url list to desired search, change output file names if desired
 - Run main.py in same folder that yml files are contained
 
