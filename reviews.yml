@@ -1,0 +1,27 @@
+productreview:
+  css: 'div[data-hook="review"]'
+  xpath: null
+  multiple: true
+  type: Text
+  children:
+    author:
+      css: 'div.a-profile-content'
+      xpath: null
+      type: Text
+    rating:
+      css: 'a.a-link-normal'
+      xpath: null
+      type: Attribute
+      attribute: title
+    date:
+      css: 'span.a-size-base.a-color-secondary.review-date'
+      xpath: null
+      type: Text
+    reviewTitle:
+      css: 'a.a-size-base.a-link-normal.review-title.a-color-base.review-title-content.a-text-bold'
+      xpath: null
+      type: Text
+    review:
+      css: 'span.a-size-base.review-text.review-text-content'
+      xpath: null
+      type: Text
