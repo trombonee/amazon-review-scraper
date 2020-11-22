@@ -6,9 +6,9 @@ import csv
 
 class AmazonScraper():
 	def __init__(self):
-		urls = ['https://www.amazon.ca/s?k=electronics']
-		csvFilename = 'electronicsOutout'
-		jsonFilename = 'electronicsOutput'
+		urls = ['https://www.amazon.ca/s?k=electronics'] #List of desired search URLs
+		csvFilename = 'electronicsOutout' 		 #Csv file name
+		jsonFilename = 'electronicsOutput'		 #Json file name
 
 		self.headers = {
 			'dnt': '1',
@@ -136,7 +136,6 @@ class AmazonScraper():
 					print("Blocked by amazon. Use better proxies")
 				else:
 					print("Something happened: " + r.status_code)
-
 				return None
 
 			reviews = self.reviewExtractor.extract(r.text)
