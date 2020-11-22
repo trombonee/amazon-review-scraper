@@ -7,6 +7,8 @@ import csv
 class AmazonScraper():
 	def __init__(self):
 		urls = ['https://www.amazon.ca/s?k=electronics']
+		csvFilename = 'electronicsOutout'
+		jsonFilename = 'electronicsOutput'
 
 		self.headers = {
 			'dnt': '1',
@@ -54,8 +56,8 @@ class AmazonScraper():
 					product['reviews'] = reviewData
 					testData.append(product)
 
-
-				with open('electronicsOutput.jsonl', 'w') as outfile:
+				filename = jsonFilename + '.jsonl'
+				with open(filename, 'w') as outfile:
 					jsonFormatted = json.dumps(urlData, indent=2)
 					outfile.write(jsonFormatted)
 					print("completed")
@@ -63,7 +65,8 @@ class AmazonScraper():
 				self.writeToCsv(testData)
 
 	def writeToCsv(self, products):
-		with open('electronicsOutput.csv', 'w') as outfile:
+		filename = csvFilename + '.csv'
+		with open(filename, 'w') as outfile:
 			writer = csv.writer(outfile)
 			for product in products:
 				row = ["Product:", product["title"]]
